@@ -16,8 +16,11 @@
      * Configures the routes for the Single Page Application connecting controllers to views
      * @param $routeProvider
      */
-    function Configuration($routeProvider) {
-        // Define your routes here. Each "view" will have a route path
+    function Configuration($routeProvider, $locationProvider, $httpProvider) {
+      $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+      $httpProvider.defaults.headers.put['Content-Type'] = 'application/json;charset=utf-8';
+
+      // Define your routes here. Each "view" will have a route path
         // associated with it. Also, you will include a Controller for
         // each view to manipulate binded data
         $routeProvider
@@ -32,24 +35,36 @@
             })
             // Home Routes
             .when("/home", {
-                templateUrl: "views/home/home-ytd.html"
+                templateUrl: "views/home/home-ytd.html",
+                controller: "HomeYTDController",
+                controllerAs: "model"
             })
             .when("/home/year", {
-                templateUrl: "views/home/home-ytd.html"
+                templateUrl: "views/home/home-ytd.html",
+                controller: "HomeYTDController",
+                controllerAs: "model"
             })
             .when("/home/week", {
-                templateUrl: "views/home/home-week.html"
+                templateUrl: "views/home/home-week.html",
+                controller: "HomeWeekController",
+                controllerAs: "model"
             })
             .when("/home/month", {
-                templateUrl: "views/home/home-month.html"
+                templateUrl: "views/home/home-month.html",
+                controller: "HomeMonthController",
+                controllerAs: "model"
             })
             // Scheduler Routes
             .when("/scheduler", {
-                templateUrl: "views/scheduler/scheduler.html"
+                templateUrl: "views/scheduler/scheduler.html",
+                controller: "SchedulerController",
+                controllerAs: "model"
             })
             // Transactions Routes
             .when("/transactions", {
-                templateUrl: "views/transactions/transactions-added.html"
+                templateUrl: "views/transactions/transactions-added.html",
+                controller: "TransactionsAddedController",
+                controllerAs: "model"
             })
             .when("/transactions/added", {
                 templateUrl: "views/transactions/transactions-added.html",
@@ -63,21 +78,28 @@
             })
             // Expenses Routes
             .when("/expenses", {
-                templateUrl: "views/expenses/expenses-quarterly-spending.html"
+                templateUrl: "views/expenses/expenses-quarterly-spending.html",
+                controller: "ExpensesQuarterlyController",
+                controllerAs: "model"
             })
             .when("/expenses/quarterly", {
-                templateUrl: "views/expenses/expenses-quarterly-spending.html"
+                templateUrl: "views/expenses/expenses-quarterly-spending.html",
+                controller: "ExpensesQuarterlyController",
+                controllerAs: "model"
             })
-            .when("/expenses/annual", {
-                templateUrl: "views/expenses/expenses-annual-spending.html"
+            .when("/expense", {
+                templateUrl: "views/expenses/expenses-annual-spending.html",
+                controller: "ExpensesAnnualController",
+                controllerAs: "model"
             })
             // Settings Routes
             .when("/settings", {
-                templateUrl: "views/settings/settings.html"
+                templateUrl: "views/settings/settings.html",
+                controller: "SettingsController",
+                controllerAs: "model"
             })
             .otherwise({
                 redirectTo: "/"
             })
     }
-
 })();

@@ -1,9 +1,36 @@
-<div class="container">
-    <h1>YTD</h1>
-    <p>Within this container will go the ng-include
-        / ng-switch / ng-switch when code for the four different screens
-    </p>
-    <a href="#/home/week">Week</a>
-    <a href="#/home/month">Month</a>
-    <a href="#/home">YTD</a>
+<div class="container home">
+    <nav class="nav-tabs third">
+        <a href="#/home/week">
+            <button>Week</button>
+        </a>
+        <a href="#/home/month">
+            <button>Month</button>
+        </a>
+        <a href="#/home">
+            <button>YTD</button>
+        </a>
+    </nav>
+    <div class="arrows">
+        <i class="fa fa-sort-asc" aria-hidden="true"></i>
+        <small id="ytd-arrowup">$9,572</small>
+        <br>
+        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+        <small id="ytd-arrowdown">$5,371</small>
+    </div>
+
+    <label class="total">$2,831</label>
+
+    <div class="graph">Graph Goes Here</div>
+
+    <div class="deductions">
+        <h3 class="black-line">Deductions</h3>
+        <label class="total">$0</label>
+        <p>0 Deductions</p>
+    </div>
+
+    <div class="next-tax-payment">
+        <h3 class="black-line">Next Tax Payment</h3>
+        <label class="total">$692</label>
+        <p>Due June 17, 2017</p>
+    </div>
 </div>
